@@ -121,9 +121,13 @@ void overrideDefaultPublishConfig(Project project, variant) {
     def scopeMappings = project.uploadArchives.repositories.mavenDeployer.pom.scopeMappings
     // Clear the scope mappings added by AGP since they are based on the current `android.defaultPublishConfig`.
     scopeMappings.mappings.clear()
-    // Add the new mappings.
+
+    /// This is workaround for building AAR file. 
+    /// ISSUE - https://github.com/firebase/flutterfire/issues/3978
+    int priority = 300
     for (Configuration configuration : flattenConfiguration(variant.runtimeConfiguration)) {
-        scopeMappings.addMapping(/* priority = */ 300, configuration, "compile")
+         scopeMappings.addMapping(/* priority = */ priority, configuration, "compile")
+         priority = priority + 100
     }
 }
 
