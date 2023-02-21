@@ -42,7 +42,7 @@ class FlutterExtension {
      * Sets the ndkVersion used by default in Flutter app projects.
      * Chosen as default version of the AGP version below.
      */
-    static String ndkVersion = "21.1.6352462"
+    static String ndkVersion = "25.2.9519653"
 
     /**
      * Specifies the relative directory to the Flutter project directory.
