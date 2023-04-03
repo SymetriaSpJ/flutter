@@ -99,10 +99,6 @@ class _DefaultDoctorValidatorsProvider implements DoctorValidatorsProvider {
     featureFlags: featureFlags,
   );
 
-  late final CustomDeviceWorkflow customDeviceWorkflow = CustomDeviceWorkflow(
-    featureFlags: featureFlags,
-  );
-
   @override
   List<DoctorValidator> get validators {
     if (_validators != null) {
